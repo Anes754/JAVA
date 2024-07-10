@@ -1,0 +1,205 @@
+					----ASSiGNMENT -03----
+
+
+21) Print Pattern with Character:-
+
+import java.util.Scanner;
+
+public class Pattern1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the Character to be printed: ");
+        char c = sc.next().charAt(0);
+        System.out.print("Max Number of time printed: ");
+        int max = sc.nextInt();
+
+        for (int i = 1; i <= max; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(c + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+22) Hollow Square:-
+
+import java.util.Scanner;
+
+public class HollowSquarePattern {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the size of the square: ");
+        int size = sc.nextInt();
+
+        for (int i = 1; i <= size; i++) {
+            for (int j = 1; j <= size; j++) {
+                if (i == 1 || i == size || j == 1 || j == size) {
+                    System.out.print("* ");
+                } else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+23) Patterns with Numbers:-
+
+public class Pattern2 {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 4; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+24) Patterns with Squares of Numbers:-
+
+public class Pattern3 {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 4; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.printf("%-4d", i * i * j);
+            }
+            System.out.println();
+        }
+    }
+}
+
+25) Symmetrical Number Pattern:-
+
+public class SymmetricalPattern {
+    public static void main(String[] args) {
+        int n = 4;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+        }
+        for (int i = n - 1; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+26) Hollow Square using Dollar pattern:-
+
+
+import java.util.Scanner;
+
+public class HollowDollarSquarePattern {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the size of the square: ");
+        int size = sc.nextInt();
+
+        for (int i = 1; i <= size; i++) {
+            for (int j = 1; j <= size; j++) {
+                if (i == 1 || i == size || j == 1 || j == size) {
+                    System.out.print("$ ");
+                } else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+27) Inverted pyramid pattern:-
+
+import java.util.Scanner;
+
+public class InvertedPyramidPattern {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input number of rows: ");
+        int rows = sc.nextInt();
+
+        for (int i = rows; i >= 1; i--) {
+            for (int j = rows - i; j > 0; j--) {
+                System.out.print(" ");
+            }
+            for (int k = 1; k <= (2 * i - 1); k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+28) Reverse a number using loop:-
+
+import java.util.Scanner;
+
+public class ReverseNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Number: ");
+        String number = sc.nextLine();
+        
+        StringBuilder reversed = new StringBuilder(number).reverse();
+        System.out.println("Reverse Number: " + reversed);
+    }
+}
+
+29) Decimal to Reversed Binary:-
+
+import java.util.Scanner;
+
+public class DecimalToReversedBinary {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input: ");
+        int number = sc.nextInt();
+
+        String binary = Integer.toBinaryString(number);
+        String reversedBinary = new StringBuilder(binary).reverse().toString();
+        int reversedNumber = Integer.parseInt(reversedBinary, 2);
+
+        System.out.println("Output: " + reversedNumber);
+    }
+}
+
+30) Eligibility to vote:-
+
+import java.util.Scanner;
+
+public class VoteEligibility {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your age: ");
+        String ageInput = sc.nextLine();
+
+        try {
+            int age = Integer.parseInt(ageInput);
+            if (age >= 18) {
+                System.out.println("You are eligible to vote.");
+            } else if (age > 0) {
+                System.out.println("You are allowed to vote after " + (18 - age) + " years.");
+            } else {
+                System.out.println("Invalid age input.");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid age input.");
+        }
+    }
+}
+
+
+
+
+
+
+
+
