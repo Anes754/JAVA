@@ -1,0 +1,153 @@
+----CALCULATE BONUS FOR EMPLOYEES----
+
+def calculate_bonus(grade, salary):
+    if grade == 'A':
+        bonus = salary * 0.05
+    elif grade == 'B':
+        bonus = salary * 0.10
+    else:
+        print("Invalid grade entered.")
+        return
+    
+    if salary < 10000:
+        bonus += salary * 0.02
+    
+    total_salary = salary + bonus
+    return salary, bonus, total_salary
+
+# Test cases
+test_cases = [
+    ('A', 8000),
+    ('C', 60000),
+    ('B', 0),
+    (38000, 'A'),
+    ('B', -8000)
+]
+
+for grade, salary in test_cases:
+    if isinstance(grade, str) and isinstance(salary, (int, float)):
+        salary, bonus, total_salary = calculate_bonus(grade, salary)
+        print(f"Salary={salary}\nBonus={bonus}\nTotal to be paid:{total_salary}\n")
+    else:
+        print("Invalid input for grade or salary.\n")
+
+----PRINT FIRST N PERFECT NUMBERS----
+
+
+def is_perfect_number(num):
+    if num < 1:
+        return False
+    divisors = [i for i in range(1, num) if num % i == 0]
+    return sum(divisors) == num
+
+def first_n_perfect_numbers(n):
+    if n <= 0:
+        return []
+    
+    perfect_numbers = []
+    num = 1
+    while len(perfect_numbers) < n:
+        if is_perfect_number(num):
+            perfect_numbers.append(num)
+        num += 1
+    
+    return perfect_numbers
+
+
+test_cases = [3, 0, 5, -2, -5, 0.2]
+
+for n in test_cases:
+    if isinstance(n, int) and n >= 0:
+        print(f"First {n} perfect numbers are: {first_n_perfect_numbers(n)}")
+    else:
+        print(f"Invalid input: {n}")
+
+----CALCULATE STUDENT GRADE----
+
+def calculate_grade(marks):
+    total = sum(marks)
+    aggregate = total / len(marks)
+    
+    if aggregate > 75:
+        grade = "DISTINCTION"
+    elif 60 <= aggregate < 75:
+        grade = "FIRST DIVISION"
+    elif 50 <= aggregate < 60:
+        grade = "SECOND DIVISION"
+    elif 40 <= aggregate < 50:
+        grade = "THIRD DIVISION"
+    else:
+        grade = "FAIL"
+    
+    return total, aggregate, grade
+
+# Test cases
+test_cases = [
+    [90, 91, 92, 93],
+    [18, 76, 93, 65],
+    [73, 78, 79, 75],
+    [98, 106, 120, 95],
+    [96, 73, -85, 95],
+    [78, 59.8, 76, 79]
+]
+
+for marks in test_cases:
+    if all(isinstance(mark, (int, float)) and 0 <= mark <= 100 for mark in marks):
+        total, aggregate, grade = calculate_grade(marks)
+        print(f"Total={total}\nAggregate={aggregate}\n{grade}\n")
+    else:
+        print("Invalid marks entered.\n")
+
+
+---- AVERAGE OF POSITIVE AND NEGATIVE NUMBERS----
+
+def average_of_numbers():
+    positive_numbers = []
+    negative_numbers = []
+    
+    while True:
+        num = int(input("Enter the number: "))
+        if num == -1:
+            break
+        elif num > 0:
+            positive_numbers.append(num)
+        elif num < 0:
+            negative_numbers.append(num)
+    
+    positive_avg = sum(positive_numbers) / len(positive_numbers) if positive_numbers else 0
+    negative_avg = sum(negative_numbers) / len(negative_numbers) if negative_numbers else 0
+    
+    return positive_avg, negative_avg
+
+# Sample test
+positive_avg, negative_avg = average_of_numbers()
+print(f"The average of negative numbers is: {negative_avg}")
+print(f"The average of positive numbers is : {positive_avg}")
+
+
+----COUNT CHARACTERS----
+
+def count_characters():
+    lower_case = 0
+    upper_case = 0
+    numbers = 0
+    
+    while True:
+        char = input("Enter any character: ")
+        if char == '*':
+            break
+        elif char.islower():
+            lower_case += 1
+        elif char.isupper():
+            upper_case += 1
+        elif char.isdigit():
+            numbers += 1
+    
+    return lower_case, upper_case, numbers
+
+# Sample test
+lower_case, upper_case, numbers = count_characters()
+print(f"Total count of lower case: {lower_case}")
+print(f"Total count of upper case: {upper_case}")
+print(f"Total count of numbers: {numbers}")
+
